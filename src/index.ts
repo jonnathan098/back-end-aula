@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import routerCategoria from './routers/categorias'
 
 // Porta do servidor
 const PORT = process.env.PORT || 4000
@@ -14,6 +15,10 @@ const app = express()
 app.get('/', (req, res) => {
 	res.send('Bem-vindo!')
 })
+
+//endpoints para as rotas de categoria
+app.use('/', routerCategoria)
+
 
 // Cors
 app.use(cors({
