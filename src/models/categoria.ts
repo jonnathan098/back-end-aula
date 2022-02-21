@@ -1,7 +1,6 @@
 
 type Categoria = {
-    id ?:number
+    id?:number
     nome:string
 }
-
 export default Categoria

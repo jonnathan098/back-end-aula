@@ -21,7 +21,7 @@ routerCategoria.get('/categorias', (req, res)=>{
 //endpoint para retornar os dados de uma categoria especifica
 //req:pedido de emvio
 //res:resposta
-routerCategoria.get('/categorias/:id',(req, res) => {
+routerCategoria.get('/categorias/:lo',(req, res) => {
     const categoria: Categoria={
         id:1,
         nome:'bares',
