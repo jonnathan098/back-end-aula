@@ -3,12 +3,12 @@ const repositoriesCategorias = {
     lertodas: () => {
         const Categoria: Categoria[] = [      
             {
-                id: 0,
+                id: 1,
                 nome:'bares',
             
             },
             {
-                id:3,
+                id:2,
                 nome:'restaurantes',
             },
         ]
