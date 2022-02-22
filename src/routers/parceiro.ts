@@ -39,3 +39,4 @@ Routerparceiro.get('/parceiro', (req, res)=>{
     
     
     export default Routerparceiro
+ 

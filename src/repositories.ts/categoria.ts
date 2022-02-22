@@ -1,4 +1,5 @@
 import Categoria from "../models/categoria"
+import database from "./dadabese"
 const repositoriesCategorias = {
     lertodas: () => {
         const Categoria: Categoria[] = [      
@@ -12,8 +13,16 @@ const repositoriesCategorias = {
                 nome:'restaurantes',
             },
         ]
-    return Categoria
+   const sql = 'select * from categoria'
+
+     database.all(sql, (err, rows) => {
+          console.log(rows)
+     })
+
+     return Categoria
+
     },
+
     ler: (id: number) => {
         const categoria: Categoria={
             id:1,
