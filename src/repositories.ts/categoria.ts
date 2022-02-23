@@ -1,35 +1,23 @@
 import Categoria from "../models/categoria"
 import database from "./dadabese"
-const repositoriesCategorias = {
-    lertodas: () => {
-        const Categoria: Categoria[] = [      
-            {
-                id: 1,
-                nome:'bares',
-            
-            },
-            {
-                id:2,
-                nome:'restaurantes',
-            },
-        ]
-   const sql = 'select * from categoria'
 
-     database.all(sql, (err, rows) => {
-          console.log(rows)
-     })
+const repositoryCategorias = {
+	lerTodas: (callback: (categorias: Categoria[]) => void) => {
+		const sql = 'SELECT * FROM categorias'
+		const allCallback = (err: Error | null, categorias: Categoria[]) => {
+			callback(categorias)
+		}
+		database.all(sql, allCallback)
+	},
 
-     return Categoria
+	ler: (id: number, callback :(categoria: Categoria)=> void) =>{
 
-    },
+		const sql = `select * from categorias where id = ${id}`
+       const getCallback = (err:Error | null, categoria: Categoria) =>{
+           callback(categoria)
+       }
 
-    ler: (id: number) => {
-        const categoria: Categoria={
-            id:1,
-            nome:'bares',
-        }
-        return categoria
-    },
+     database.get(sql,getCallback)
+	}
 }
-
-export default  repositoriesCategorias
+export default  repositoryCategorias
